@@ -231,10 +231,12 @@ Text to process: ${text}`,
       .join(", ");
 
     // Use the earliest start time and latest end time
-    const allStartTimes = processedEvents.map(
-      (e) => new Date(e.eventData.start)
+    const allStartTimes = processedEvents.map((e) =>
+      new Date(e.eventData.start).getTime()
     );
-    const allEndTimes = processedEvents.map((e) => new Date(e.eventData.end));
+    const allEndTimes = processedEvents.map((e) =>
+      new Date(e.eventData.end).getTime()
+    );
     const earliestStart = new Date(Math.min(...allStartTimes));
     const latestEnd = new Date(Math.max(...allEndTimes));
 

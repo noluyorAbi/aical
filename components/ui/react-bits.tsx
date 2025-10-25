@@ -3,16 +3,24 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Magnetic Button - React Bits inspired
+interface MagneticButtonProps {
+  children: React.ReactNode;
+  className?: string;
+  as?: React.ElementType;
+  href?: string;
+  [key: string]: any;
+}
+
 export const MagneticButton = ({
   children,
   className = "",
   as: Component = "button",
   href,
   ...props
-}) => {
+}: MagneticButtonProps) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
@@ -48,7 +56,13 @@ export const MagneticButton = ({
 };
 
 // Shimmer Card - React Bits inspired
-export const ShimmerCard = ({ children, className = "", ...props }) => {
+interface ShimmerCardProps {
+  children: React.ReactNode;
+  className?: string;
+  [key: string]: any;
+}
+
+export const ShimmerCard = ({ children, className = "", ...props }: ShimmerCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -69,7 +83,14 @@ export const ShimmerCard = ({ children, className = "", ...props }) => {
 };
 
 // Animated Text - React Bits inspired
-export const AnimatedText = ({ text, className = "", delay = 0, ...props }) => {
+interface AnimatedTextProps {
+  text: string;
+  className?: string;
+  delay?: number;
+  [key: string]: any;
+}
+
+export const AnimatedText = ({ text, className = "", delay = 0, ...props }: AnimatedTextProps) => {
   const words = text.split(" ");
 
   return (
@@ -94,7 +115,13 @@ export const AnimatedText = ({ text, className = "", delay = 0, ...props }) => {
 };
 
 // Gradient Border Card - React Bits inspired
-export const GradientBorderCard = ({ children, className = "", ...props }) => {
+interface GradientBorderCardProps {
+  children: React.ReactNode;
+  className?: string;
+  [key: string]: any;
+}
+
+export const GradientBorderCard = ({ children, className = "", ...props }: GradientBorderCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -115,10 +142,16 @@ export const GradientBorderCard = ({ children, className = "", ...props }) => {
 };
 
 // Spotlight Effect - React Bits inspired
-export const SpotlightCard = ({ children, className = "", ...props }) => {
+interface SpotlightCardProps {
+  children: React.ReactNode;
+  className?: string;
+  [key: string]: any;
+}
+
+export const SpotlightCard = ({ children, className = "", ...props }: SpotlightCardProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: e.clientX - rect.left,

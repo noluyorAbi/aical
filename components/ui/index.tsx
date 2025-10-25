@@ -3,6 +3,22 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Button Component inspired by React Bits
+interface ButtonProps {
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "ghost" | "danger";
+  size?: "sm" | "md" | "lg" | "xl";
+  className?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  loading?: boolean;
+  as?: React.ElementType;
+  href?: string;
+  target?: string;
+  rel?: string;
+  download?: string;
+  [key: string]: any;
+}
+
 export const Button = ({
   children,
   variant = "primary",
@@ -17,7 +33,7 @@ export const Button = ({
   rel,
   download,
   ...props
-}) => {
+}: ButtonProps) => {
   // Automatically determine the component type
   const ComponentType = Component || (href ? "a" : "button");
   const baseClasses =
@@ -69,13 +85,21 @@ export const Button = ({
 };
 
 // Card Component inspired by React Bits
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+  hover?: boolean;
+  gradient?: boolean;
+  [key: string]: any;
+}
+
 export const Card = ({
   children,
   className = "",
   hover = false,
   gradient = false,
   ...props
-}) => {
+}: CardProps) => {
   const baseClasses =
     "bg-slate-900/50 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-800";
   const hoverClasses = hover
@@ -98,7 +122,12 @@ export const Card = ({
 };
 
 // Input Component inspired by React Bits
-export const Input = ({ className = "", error = false, ...props }) => {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  className?: string;
+  error?: boolean;
+}
+
+export const Input = ({ className = "", error = false, ...props }: InputProps) => {
   const baseClasses =
     "w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-200 bg-slate-900 text-slate-50 placeholder-slate-400";
   const errorClasses = error
@@ -114,7 +143,12 @@ export const Input = ({ className = "", error = false, ...props }) => {
 };
 
 // Textarea Component inspired by React Bits
-export const Textarea = ({ className = "", error = false, ...props }) => {
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  className?: string;
+  error?: boolean;
+}
+
+export const Textarea = ({ className = "", error = false, ...props }: TextareaProps) => {
   const baseClasses =
     "w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-200 resize-none bg-slate-900 text-slate-50 placeholder-slate-400";
   const errorClasses = error
@@ -130,13 +164,21 @@ export const Textarea = ({ className = "", error = false, ...props }) => {
 };
 
 // Badge Component inspired by React Bits
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: "default" | "primary" | "success" | "warning" | "danger";
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  [key: string]: any;
+}
+
 export const Badge = ({
   children,
   variant = "default",
   size = "md",
   className = "",
   ...props
-}) => {
+}: BadgeProps) => {
   const baseClasses = "inline-flex items-center font-medium rounded-full";
 
   const variants = {
@@ -164,12 +206,19 @@ export const Badge = ({
 };
 
 // Alert Component inspired by React Bits
+interface AlertProps {
+  children: React.ReactNode;
+  variant?: "info" | "success" | "warning" | "error";
+  className?: string;
+  [key: string]: any;
+}
+
 export const Alert = ({
   children,
   variant = "info",
   className = "",
   ...props
-}) => {
+}: AlertProps) => {
   const baseClasses = "p-4 rounded-xl border flex items-start gap-3";
 
   const variants = {
@@ -200,12 +249,19 @@ export const Alert = ({
 };
 
 // Container Component inspired by React Bits
+interface ContainerProps {
+  children: React.ReactNode;
+  className?: string;
+  maxWidth?: "sm" | "md" | "lg" | "xl";
+  [key: string]: any;
+}
+
 export const Container = ({
   children,
   className = "",
   maxWidth = "xl",
   ...props
-}) => {
+}: ContainerProps) => {
   const maxWidthClasses = {
     sm: "max-w-2xl",
     md: "max-w-4xl",

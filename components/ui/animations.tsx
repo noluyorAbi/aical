@@ -2,13 +2,21 @@
 import { motion } from "framer-motion";
 
 // SplitText Component inspired by React Bits
+interface SplitTextProps {
+  text: string;
+  className?: string;
+  delay?: number;
+  stagger?: number;
+  [key: string]: any;
+}
+
 export const SplitText = ({
   text,
   className = "",
   delay = 0.03,
   stagger = 0.05,
   ...props
-}) => {
+}: SplitTextProps) => {
   const words = text.split(" ");
 
   return (
@@ -33,12 +41,19 @@ export const SplitText = ({
 };
 
 // GlowText Component for premium effects
+interface GlowTextProps {
+  children: React.ReactNode;
+  className?: string;
+  glowColor?: "blue" | "purple" | "green" | "chronos";
+  [key: string]: any;
+}
+
 export const GlowText = ({
   children,
   className = "",
   glowColor = "blue",
   ...props
-}) => {
+}: GlowTextProps) => {
   const glowClasses = {
     blue: "shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]",
     purple: "shadow-[0_0_40px_-10px_rgba(147,51,234,0.5)]",
@@ -60,12 +75,19 @@ export const GlowText = ({
 };
 
 // Glassmorphism Container
+interface GlassCardProps {
+  children: React.ReactNode;
+  className?: string;
+  intensity?: "light" | "medium" | "strong";
+  [key: string]: any;
+}
+
 export const GlassCard = ({
   children,
   className = "",
   intensity = "light",
   ...props
-}) => {
+}: GlassCardProps) => {
   const intensityClasses = {
     light: "bg-gray-800/50 backdrop-blur-md border-gray-700",
     medium: "bg-gray-800/70 backdrop-blur-lg border-gray-600",
@@ -86,12 +108,19 @@ export const GlassCard = ({
 };
 
 // Floating Animation Component
+interface FloatingElementProps {
+  children: React.ReactNode;
+  intensity?: "subtle" | "medium" | "strong";
+  className?: string;
+  [key: string]: any;
+}
+
 export const FloatingElement = ({
   children,
   intensity = "subtle",
   className = "",
   ...props
-}) => {
+}: FloatingElementProps) => {
   const intensityClasses = {
     subtle: { y: [-4, 4], duration: 3 },
     medium: { y: [-8, 8], duration: 2.5 },

@@ -9,8 +9,6 @@ import {
   AlertTriangle,
   Lightbulb,
   Download,
-  Plus,
-  ExternalLink,
 } from "lucide-react";
 
 interface EventResult {
@@ -151,10 +149,19 @@ export default function EventForm() {
       <div className="space-y-2">
         <Textarea
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+            setText(e.target.value)
+          }
           onKeyDown={handleKeyPress}
           className="min-h-[120px]"
-          placeholder="Subject: Team Standup Meeting&#10;&#10;Hi everyone,&#10;&#10;Let's have our weekly standup tomorrow at 2pm in Conference Room A. We'll discuss the current sprint progress and blockers.&#10;&#10;See you there!&#10;John"
+          placeholder="Subject: Team Standup Meeting
+
+Hi everyone,
+
+Let's have our weekly standup tomorrow at 2pm in Conference Room A. We'll discuss the current sprint progress and blockers.
+
+See you there!
+John"
           disabled={loading}
         />
         <div className="flex justify-between items-center">
@@ -214,12 +221,12 @@ export default function EventForm() {
               </div>
               <ul className="text-xs text-red-300 space-y-1">
                 <li>
-                  • Include a specific time (e.g., &ldquo;2pm&rdquo;,
-                  &ldquo;tomorrow at 3pm&rdquo;)
+                  • Include a specific time (e.g., &quot;2pm&quot;,
+                  &quot;tomorrow at 3pm&quot;)
                 </li>
                 <li>
-                  • Mention a date or relative time (e.g., &ldquo;next
-                  Tuesday&rdquo;, &ldquo;tomorrow&rdquo;)
+                  • Mention a date or relative time (e.g., &quot;next
+                  Tuesday&quot;, &quot;tomorrow&quot;)
                 </li>
                 <li>
                   • Be clear about what the event is (meeting, appointment,
@@ -275,7 +282,7 @@ export default function EventForm() {
                 </Button>
                 <p className="text-xs text-green-600 mt-2">
                   This opens each event in Google Calendar with details
-                  pre-filled - just click "Save"
+                  pre-filled - just click &quot;Save&quot;
                 </p>
               </div>
             )}
@@ -402,25 +409,25 @@ export default function EventForm() {
             </h5>
             <div className="text-xs text-slate-400 space-y-1">
               <p>
-                • <strong>No data storage:</strong> We don't save your messages
-                or personal information
+                • <strong>No data storage:</strong> We don&apos;t save your
+                messages or personal information
               </p>
               <p>
                 • <strong>Local processing:</strong> Your data is processed
                 securely and discarded immediately
               </p>
               <p>
-                • <strong>No tracking:</strong> We don't track or monitor your
-                usage
+                • <strong>No tracking:</strong> We don&apos;t track or monitor
+                your usage
               </p>
               <p>
                 • <strong>Secure transmission:</strong> All data is encrypted
                 during processing
               </p>
               <p className="text-blue-300">
-                • <strong>AI Processing:</strong> We use Google's AI Studio API
-                to process your messages - Google's privacy policy applies to AI
-                processing
+                • <strong>AI Processing:</strong> We use Google&apos;s AI Studio
+                API to process your messages - Google&apos;s privacy policy
+                applies to AI processing
               </p>
             </div>
           </div>
