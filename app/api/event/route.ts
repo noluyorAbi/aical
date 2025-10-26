@@ -10,14 +10,14 @@ export async function POST(req: Request) {
     if (!text) {
       return NextResponse.json(
         { error: "Text input is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!GOOGLE_API_KEY) {
       return NextResponse.json(
         { error: "Google API key not configured" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -90,7 +90,7 @@ Text to process: ${text}`,
             temperature: 0.1,
           },
         }),
-      }
+      },
     );
 
     if (!geminiResponse.ok) {
@@ -117,7 +117,7 @@ Text to process: ${text}`,
     if (!Array.isArray(eventsData)) {
       return NextResponse.json(
         { error: "Expected array of events" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -126,7 +126,7 @@ Text to process: ${text}`,
       if (!event.title || !event.start || !event.end) {
         return NextResponse.json(
           { error: "Failed to extract required event information" },
-          { status: 400 }
+          { status: 400 },
         );
       }
     }
@@ -150,8 +150,8 @@ Text to process: ${text}`,
       gcal.searchParams.set(
         "dates",
         `${formatDateForGoogleCalendar(
-          eventData.start
-        )}/${formatDateForGoogleCalendar(eventData.end)}`
+          eventData.start,
+        )}/${formatDateForGoogleCalendar(eventData.end)}`,
       );
 
       // Create Outlook Calendar link
@@ -164,14 +164,14 @@ Text to process: ${text}`,
       };
 
       const outlookUrl = new URL(
-        "https://outlook.live.com/calendar/0/deeplink/compose"
+        "https://outlook.live.com/calendar/0/deeplink/compose",
       );
       outlookUrl.searchParams.set("subject", eventData.title);
       outlookUrl.searchParams.set("body", eventData.description || "");
       outlookUrl.searchParams.set("location", eventData.location || "");
       outlookUrl.searchParams.set(
         "startdt",
-        formatDateForOutlook(eventData.start)
+        formatDateForOutlook(eventData.start),
       );
       outlookUrl.searchParams.set("enddt", formatDateForOutlook(eventData.end));
 
@@ -201,7 +201,7 @@ Text to process: ${text}`,
 
       if (error) {
         throw new Error(
-          `Failed to create ICS for event "${eventData.title}": ${error.message}`
+          `Failed to create ICS for event "${eventData.title}": ${error.message}`,
         );
       }
 
@@ -232,10 +232,10 @@ Text to process: ${text}`,
 
     // Use the earliest start time and latest end time
     const allStartTimes = processedEvents.map((e) =>
-      new Date(e.eventData.start).getTime()
+      new Date(e.eventData.start).getTime(),
     );
     const allEndTimes = processedEvents.map((e) =>
-      new Date(e.eventData.end).getTime()
+      new Date(e.eventData.end).getTime(),
     );
     const earliestStart = new Date(Math.min(...allStartTimes));
     const latestEnd = new Date(Math.max(...allEndTimes));
@@ -255,23 +255,23 @@ Text to process: ${text}`,
         .map(
           (e, i) =>
             `${i + 1}. ${e.eventData.title} - ${new Date(
-              e.eventData.start
+              e.eventData.start,
             ).toLocaleString()} to ${new Date(
-              e.eventData.end
+              e.eventData.end,
             ).toLocaleString()}${
               e.eventData.location ? ` at ${e.eventData.location}` : ""
             }${
               e.eventData.description ? `\n   ${e.eventData.description}` : ""
-            }`
+            }`,
         )
-        .join("\n\n")}`
+        .join("\n\n")}`,
     );
     bulkGcal.searchParams.set("location", allLocations);
     bulkGcal.searchParams.set(
       "dates",
       `${formatDateForGoogleCalendar(
-        earliestStart
-      )}/${formatDateForGoogleCalendar(latestEnd)}`
+        earliestStart,
+      )}/${formatDateForGoogleCalendar(latestEnd)}`,
     );
 
     return NextResponse.json({
@@ -282,7 +282,7 @@ Text to process: ${text}`,
     console.error("Error processing event:", error);
     return NextResponse.json(
       { error: "Failed to process event" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

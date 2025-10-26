@@ -53,12 +53,33 @@ export default function AppleIcon() {
           >
             {/* Calendar Rings */}
             <div style={{ display: "flex", gap: "20px" }}>
-              <div style={{ width: "4px", height: "12px", backgroundColor: "white", borderRadius: "2px" }} />
-              <div style={{ width: "4px", height: "12px", backgroundColor: "white", borderRadius: "2px" }} />
-              <div style={{ width: "4px", height: "12px", backgroundColor: "white", borderRadius: "2px" }} />
+              <div
+                style={{
+                  width: "4px",
+                  height: "12px",
+                  backgroundColor: "white",
+                  borderRadius: "2px",
+                }}
+              />
+              <div
+                style={{
+                  width: "4px",
+                  height: "12px",
+                  backgroundColor: "white",
+                  borderRadius: "2px",
+                }}
+              />
+              <div
+                style={{
+                  width: "4px",
+                  height: "12px",
+                  backgroundColor: "white",
+                  borderRadius: "2px",
+                }}
+              />
             </div>
           </div>
-          
+
           {/* Calendar Body */}
           <div
             style={{
@@ -75,26 +96,110 @@ export default function AppleIcon() {
           >
             {/* Calendar Grid */}
             <div style={{ display: "flex", gap: "8px" }}>
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#0ea5e9", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#0ea5e9",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
             </div>
             <div style={{ display: "flex", gap: "8px" }}>
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
             </div>
             <div style={{ display: "flex", gap: "8px" }}>
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
-              <div style={{ width: "8px", height: "8px", backgroundColor: "#64748b", borderRadius: "50%" }} />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#64748b",
+                  borderRadius: "50%",
+                }}
+              />
             </div>
           </div>
         </div>
-        
+
         {/* AI Sparkle Effect */}
         <div
           style={{
@@ -119,6 +224,6 @@ export default function AppleIcon() {
     ),
     {
       ...size,
-    }
+    },
   );
 }

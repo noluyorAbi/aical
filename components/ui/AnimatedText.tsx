@@ -5,10 +5,7 @@ type AnimatedTextProps = {
   className?: string;
 };
 
-const AnimatedText = ({
-  text,
-  className = "",
-}: AnimatedTextProps) => {
+const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
   return <h1 className={className}>{text}</h1>;
 };
 

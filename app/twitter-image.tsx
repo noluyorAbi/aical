@@ -148,6 +148,6 @@ export default async function TwitterImage() {
     ),
     {
       ...size,
-    }
+    },
   );
 }

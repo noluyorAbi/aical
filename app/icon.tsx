@@ -51,10 +51,24 @@ export default function Icon() {
             }}
           >
             {/* Ring holes */}
-            <div style={{ width: "2px", height: "2px", backgroundColor: "white", borderRadius: "50%" }} />
-            <div style={{ width: "2px", height: "2px", backgroundColor: "white", borderRadius: "50%" }} />
+            <div
+              style={{
+                width: "2px",
+                height: "2px",
+                backgroundColor: "white",
+                borderRadius: "50%",
+              }}
+            />
+            <div
+              style={{
+                width: "2px",
+                height: "2px",
+                backgroundColor: "white",
+                borderRadius: "50%",
+              }}
+            />
           </div>
-          
+
           {/* Calendar Body */}
           <div
             style={{
@@ -66,19 +80,73 @@ export default function Icon() {
             }}
           >
             {/* Calendar Grid Rows */}
-            <div style={{ display: "flex", gap: "1px", justifyContent: "space-around" }}>
-              <div style={{ width: "2px", height: "2px", backgroundColor: "#e2e8f0", borderRadius: "50%" }} />
-              <div style={{ width: "2px", height: "2px", backgroundColor: "#e2e8f0", borderRadius: "50%" }} />
-              <div style={{ width: "2px", height: "2px", backgroundColor: "#0ea5e9", borderRadius: "50%" }} />
+            <div
+              style={{
+                display: "flex",
+                gap: "1px",
+                justifyContent: "space-around",
+              }}
+            >
+              <div
+                style={{
+                  width: "2px",
+                  height: "2px",
+                  backgroundColor: "#e2e8f0",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "2px",
+                  height: "2px",
+                  backgroundColor: "#e2e8f0",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "2px",
+                  height: "2px",
+                  backgroundColor: "#0ea5e9",
+                  borderRadius: "50%",
+                }}
+              />
             </div>
-            <div style={{ display: "flex", gap: "1px", justifyContent: "space-around" }}>
-              <div style={{ width: "2px", height: "2px", backgroundColor: "#e2e8f0", borderRadius: "50%" }} />
-              <div style={{ width: "2px", height: "2px", backgroundColor: "#3b82f6", borderRadius: "50%" }} />
-              <div style={{ width: "2px", height: "2px", backgroundColor: "#e2e8f0", borderRadius: "50%" }} />
+            <div
+              style={{
+                display: "flex",
+                gap: "1px",
+                justifyContent: "space-around",
+              }}
+            >
+              <div
+                style={{
+                  width: "2px",
+                  height: "2px",
+                  backgroundColor: "#e2e8f0",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "2px",
+                  height: "2px",
+                  backgroundColor: "#3b82f6",
+                  borderRadius: "50%",
+                }}
+              />
+              <div
+                style={{
+                  width: "2px",
+                  height: "2px",
+                  backgroundColor: "#e2e8f0",
+                  borderRadius: "50%",
+                }}
+              />
             </div>
           </div>
         </div>
-        
+
         {/* AI Indicator - Modern Sparkle */}
         <div
           style={{
@@ -102,6 +170,6 @@ export default function Icon() {
     ),
     {
       ...size,
-    }
+    },
   );
 }

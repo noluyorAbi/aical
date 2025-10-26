@@ -127,7 +127,11 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
 }
 
-export const Input = ({ className = "", error = false, ...props }: InputProps) => {
+export const Input = ({
+  className = "",
+  error = false,
+  ...props
+}: InputProps) => {
   const baseClasses =
     "w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-200 bg-slate-900 text-slate-50 placeholder-slate-400";
   const errorClasses = error
@@ -143,12 +147,17 @@ export const Input = ({ className = "", error = false, ...props }: InputProps) =
 };
 
 // Textarea Component inspired by React Bits
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
   error?: boolean;
 }
 
-export const Textarea = ({ className = "", error = false, ...props }: TextareaProps) => {
+export const Textarea = ({
+  className = "",
+  error = false,
+  ...props
+}: TextareaProps) => {
   const baseClasses =
     "w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-200 resize-none bg-slate-900 text-slate-50 placeholder-slate-400";
   const errorClasses = error

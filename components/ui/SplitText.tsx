@@ -5,10 +5,7 @@ type SplitTextProps = {
   className?: string;
 };
 
-const SplitText = ({
-  text,
-  className = "",
-}: SplitTextProps) => {
+const SplitText = ({ text, className = "" }: SplitTextProps) => {
   return <div className={className}>{text}</div>;
 };
 

@@ -65,7 +65,11 @@ interface ShimmerCardProps {
   [key: string]: any;
 }
 
-export const ShimmerCard = ({ children, className = "", ...props }: ShimmerCardProps) => {
+export const ShimmerCard = ({
+  children,
+  className = "",
+  ...props
+}: ShimmerCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -93,7 +97,12 @@ interface AnimatedTextProps {
   [key: string]: any;
 }
 
-export const AnimatedText = ({ text, className = "", delay = 0, ...props }: AnimatedTextProps) => {
+export const AnimatedText = ({
+  text,
+  className = "",
+  delay = 0,
+  ...props
+}: AnimatedTextProps) => {
   const words = text.split(" ");
 
   return (
@@ -124,7 +133,11 @@ interface GradientBorderCardProps {
   [key: string]: any;
 }
 
-export const GradientBorderCard = ({ children, className = "", ...props }: GradientBorderCardProps) => {
+export const GradientBorderCard = ({
+  children,
+  className = "",
+  ...props
+}: GradientBorderCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -151,7 +164,11 @@ interface SpotlightCardProps {
   [key: string]: any;
 }
 
-export const SpotlightCard = ({ children, className = "", ...props }: SpotlightCardProps) => {
+export const SpotlightCard = ({
+  children,
+  className = "",
+  ...props
+}: SpotlightCardProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {

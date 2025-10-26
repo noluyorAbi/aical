@@ -5,10 +5,7 @@ type FadeTextProps = {
   className?: string;
 };
 
-const FadeText = ({
-  text,
-  className = "",
-}: FadeTextProps) => {
+const FadeText = ({ text, className = "" }: FadeTextProps) => {
   return <div className={className}>{text}</div>;
 };
 
