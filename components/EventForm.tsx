@@ -259,11 +259,13 @@ John"
               <div className="mt-4">
                 <Button
                   onClick={() => {
-                    result.events.forEach((event, index) => {
-                      setTimeout(() => {
-                        window.open(event.googleCalendarLink, "_blank");
-                      }, index * 500); // Stagger opening by 500ms
-                    });
+                    result.events.forEach(
+                      (event: EventResult, index: number) => {
+                        setTimeout(() => {
+                          window.open(event.googleCalendarLink, "_blank");
+                        }, index * 500); // Stagger opening by 500ms
+                      }
+                    );
                   }}
                   variant="secondary"
                   size="sm"
@@ -289,7 +291,7 @@ John"
           </Alert>
 
           <div className="space-y-4">
-            {result.events.map((event, index) => (
+            {result.events.map((event: EventResult, index: number) => (
               <Card
                 key={index}
                 hover
