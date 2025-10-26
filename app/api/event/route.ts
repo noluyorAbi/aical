@@ -133,6 +133,14 @@ Text to process: ${text}`,
 
     // Process each event
     const processedEvents = eventsData.map((eventData) => {
+      // Create enhanced description with original text for calendar exports
+      const descriptionWithOriginal = eventData.description
+        ? `${eventData.description}\n\n-----ORIGINAL TEXT-----\n\n${text}`
+        : `-----ORIGINAL TEXT-----\n\n${text}`;
+
+      // Use AI description only for web app display
+      const aiDescription = eventData.description || "";
+
       // Create Google Calendar link
       const formatDateForGoogleCalendar = (dateString: string) => {
         const date = new Date(dateString);
@@ -145,7 +153,7 @@ Text to process: ${text}`,
       const gcal = new URL("https://www.google.com/calendar/render");
       gcal.searchParams.set("action", "TEMPLATE");
       gcal.searchParams.set("text", eventData.title);
-      gcal.searchParams.set("details", eventData.description || "");
+      gcal.searchParams.set("details", descriptionWithOriginal);
       gcal.searchParams.set("location", eventData.location || "");
       gcal.searchParams.set(
         "dates",
@@ -167,7 +175,7 @@ Text to process: ${text}`,
         "https://outlook.live.com/calendar/0/deeplink/compose",
       );
       outlookUrl.searchParams.set("subject", eventData.title);
-      outlookUrl.searchParams.set("body", eventData.description || "");
+      outlookUrl.searchParams.set("body", descriptionWithOriginal);
       outlookUrl.searchParams.set("location", eventData.location || "");
       outlookUrl.searchParams.set(
         "startdt",
@@ -181,7 +189,7 @@ Text to process: ${text}`,
 
       const { error, value } = createEvent({
         title: eventData.title,
-        description: eventData.description || "",
+        description: descriptionWithOriginal,
         location: eventData.location || "",
         start: [
           startDate.getFullYear(),
@@ -211,7 +219,7 @@ Text to process: ${text}`,
         icsFile: Buffer.from(value!).toString("base64"),
         eventData: {
           title: eventData.title,
-          description: eventData.description || "",
+          description: aiDescription, // Show only AI description in web app
           location: eventData.location || "",
           start: eventData.start,
           end: eventData.end,

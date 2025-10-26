@@ -2,12 +2,14 @@
 import { motion } from "framer-motion";
 
 // SplitText Component inspired by React Bits
-interface SplitTextProps {
+interface SplitTextProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd"
+  > {
   text: string;
-  className?: string;
   delay?: number;
   stagger?: number;
-  [key: string]: any;
 }
 
 export const SplitText = ({
@@ -41,11 +43,13 @@ export const SplitText = ({
 };
 
 // GlowText Component for premium effects
-interface GlowTextProps {
+interface GlowTextProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
-  className?: string;
   glowColor?: "blue" | "purple" | "green" | "chronos";
-  [key: string]: any;
 }
 
 export const GlowText = ({
@@ -75,11 +79,13 @@ export const GlowText = ({
 };
 
 // Glassmorphism Container
-interface GlassCardProps {
+interface GlassCardProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
-  className?: string;
   intensity?: "light" | "medium" | "strong";
-  [key: string]: any;
 }
 
 export const GlassCard = ({
@@ -108,11 +114,13 @@ export const GlassCard = ({
 };
 
 // Floating Animation Component
-interface FloatingElementProps {
+interface FloatingElementProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
   intensity?: "subtle" | "medium" | "strong";
-  className?: string;
-  [key: string]: any;
 }
 
 export const FloatingElement = ({

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Button, Textarea, Card, Alert, Badge } from "@/components/ui";
+import { Button, Textarea, Card, Alert } from "@/components/ui";
 import {
   Mail,
   Calendar,
@@ -58,20 +58,20 @@ export default function EventForm() {
         // Provide more specific error messages based on the error
         if (res.status === 400) {
           throw new Error(
-            "Please provide a valid event description. Try being more specific about the time, date, or event details.",
+            "Please provide a valid event description. Try being more specific about the time, date, or event details."
           );
         } else if (res.status === 429) {
           throw new Error(
-            "Too many requests. Please wait a moment and try again.",
+            "Too many requests. Please wait a moment and try again."
           );
         } else if (res.status === 500) {
           throw new Error(
-            "Our AI is having trouble processing your request. Please try rephrasing your event description.",
+            "Our AI is having trouble processing your request. Please try rephrasing your event description."
           );
         } else {
           throw new Error(
             data.error ||
-              "Failed to process event. Please try again with a clearer description.",
+              "Failed to process event. Please try again with a clearer description."
           );
         }
       }
@@ -81,7 +81,7 @@ export default function EventForm() {
       setError(
         err instanceof Error
           ? err.message
-          : "An unexpected error occurred. Please try again.",
+          : "An unexpected error occurred. Please try again."
       );
     } finally {
       setLoading(false);

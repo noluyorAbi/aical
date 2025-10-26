@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Magnetic Button - React Bits inspired
-interface MagneticButtonProps {
+interface MagneticButtonProps
+  extends Omit<
+    React.HTMLAttributes<HTMLElement>,
+    "onDrag" | "onDragStart" | "onDragEnd"
+  > {
   children: React.ReactNode;
-  className?: string;
   as?: React.ElementType;
   href?: string;
-  [key: string]: any;
 }
 
 export const MagneticButton = ({
@@ -59,10 +61,12 @@ export const MagneticButton = ({
 };
 
 // Shimmer Card - React Bits inspired
-interface ShimmerCardProps {
+interface ShimmerCardProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
-  className?: string;
-  [key: string]: any;
 }
 
 export const ShimmerCard = ({
@@ -90,11 +94,9 @@ export const ShimmerCard = ({
 };
 
 // Animated Text - React Bits inspired
-interface AnimatedTextProps {
+interface AnimatedTextProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string;
-  className?: string;
   delay?: number;
-  [key: string]: any;
 }
 
 export const AnimatedText = ({
@@ -127,10 +129,12 @@ export const AnimatedText = ({
 };
 
 // Gradient Border Card - React Bits inspired
-interface GradientBorderCardProps {
+interface GradientBorderCardProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
-  className?: string;
-  [key: string]: any;
 }
 
 export const GradientBorderCard = ({
@@ -158,10 +162,12 @@ export const GradientBorderCard = ({
 };
 
 // Spotlight Effect - React Bits inspired
-interface SpotlightCardProps {
+interface SpotlightCardProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
-  className?: string;
-  [key: string]: any;
 }
 
 export const SpotlightCard = ({

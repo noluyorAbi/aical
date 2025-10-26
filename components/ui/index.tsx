@@ -3,11 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Button Component inspired by React Bits
-interface ButtonProps {
+interface ButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick"> {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost" | "danger";
   size?: "sm" | "md" | "lg" | "xl";
-  className?: string;
   onClick?: () => void;
   disabled?: boolean;
   loading?: boolean;
@@ -16,7 +16,6 @@ interface ButtonProps {
   target?: string;
   rel?: string;
   download?: string;
-  [key: string]: any;
 }
 
 export const Button = ({
@@ -85,12 +84,14 @@ export const Button = ({
 };
 
 // Card Component inspired by React Bits
-interface CardProps {
+interface CardProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
-  className?: string;
   hover?: boolean;
   gradient?: boolean;
-  [key: string]: any;
 }
 
 export const Card = ({
@@ -173,12 +174,10 @@ export const Textarea = ({
 };
 
 // Badge Component inspired by React Bits
-interface BadgeProps {
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
   variant?: "default" | "primary" | "success" | "warning" | "danger";
   size?: "sm" | "md" | "lg";
-  className?: string;
-  [key: string]: any;
 }
 
 export const Badge = ({
@@ -215,11 +214,13 @@ export const Badge = ({
 };
 
 // Alert Component inspired by React Bits
-interface AlertProps {
+interface AlertProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+  > {
   children: React.ReactNode;
   variant?: "info" | "success" | "warning" | "error";
-  className?: string;
-  [key: string]: any;
 }
 
 export const Alert = ({
@@ -258,11 +259,9 @@ export const Alert = ({
 };
 
 // Container Component inspired by React Bits
-interface ContainerProps {
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  className?: string;
   maxWidth?: "sm" | "md" | "lg" | "xl";
-  [key: string]: any;
 }
 
 export const Container = ({
