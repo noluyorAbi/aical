@@ -46,7 +46,11 @@ export const SplitText = ({
 interface GlowTextProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
   glowColor?: "blue" | "purple" | "green" | "chronos";
@@ -82,7 +86,11 @@ export const GlowText = ({
 interface GlassCardProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
   intensity?: "light" | "medium" | "strong";
@@ -117,7 +125,11 @@ export const GlassCard = ({
 interface FloatingElementProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
   intensity?: "subtle" | "medium" | "strong";

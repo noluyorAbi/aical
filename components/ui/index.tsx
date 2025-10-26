@@ -87,7 +87,11 @@ export const Button = ({
 interface CardProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
   hover?: boolean;
@@ -217,7 +221,11 @@ export const Badge = ({
 interface AlertProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
   variant?: "info" | "success" | "warning" | "error";

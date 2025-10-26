@@ -64,7 +64,11 @@ export const MagneticButton = ({
 interface ShimmerCardProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
 }
@@ -132,7 +136,11 @@ export const AnimatedText = ({
 interface GradientBorderCardProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
 }
@@ -165,7 +173,11 @@ export const GradientBorderCard = ({
 interface SpotlightCardProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
+    | "onDrag"
+    | "onDragStart"
+    | "onDragEnd"
+    | "onAnimationStart"
+    | "onAnimationEnd"
   > {
   children: React.ReactNode;
 }
