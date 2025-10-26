@@ -43,3 +43,10 @@ next-env.d.ts
 
 # bun
 bun.lockb
+
+# images (except required OG images)
+*.png
+*.jpg
+*.jpeg
+!public/*.svg
+!public/opengraph-image.png
