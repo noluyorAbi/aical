@@ -84,7 +84,7 @@ export default function Home() {
               ease: [0.25, 0.1, 0.25, 1],
               scale: { duration: 1.0, ease: [0.25, 0.1, 0.25, 1] },
             }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-8 sm:gap-4 justify-center items-center"
           >
             <motion.div
               whileHover={{
