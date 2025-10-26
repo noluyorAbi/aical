@@ -244,18 +244,11 @@ John"
       {result && (
         <div className="space-y-6">
           <Alert variant="success">
-            <div className="flex items-center justify-between w-full">
-              <span className="font-semibold">
-                {result.count === 1
-                  ? "Event Created Successfully!"
-                  : `${result.count} Events Created Successfully!`}
-              </span>
-              {result.count > 1 && (
-                <Badge variant="primary" size="sm">
-                  {result.count} events
-                </Badge>
-              )}
-            </div>
+            <span className="font-semibold">
+              {result.count === 1
+                ? "Event Created Successfully!"
+                : `${result.count} Events Created Successfully!`}
+            </span>
           </Alert>
 
           <div className="space-y-4">
