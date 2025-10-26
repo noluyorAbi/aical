@@ -10,6 +10,8 @@ import {
   Lightbulb,
   Download,
 } from "lucide-react";
+import { SiGooglecalendar } from "react-icons/si";
+import { PiMicrosoftOutlookLogo } from "react-icons/pi";
 
 interface EventResult {
   googleCalendarLink: string;
@@ -254,40 +256,6 @@ John"
                 </Badge>
               )}
             </div>
-
-            {result.count > 1 && (
-              <div className="mt-4">
-                <Button
-                  onClick={() => {
-                    result.events.forEach(
-                      (event: EventResult, index: number) => {
-                        setTimeout(() => {
-                          window.open(event.googleCalendarLink, "_blank");
-                        }, index * 500); // Stagger opening by 500ms
-                      }
-                    );
-                  }}
-                  variant="secondary"
-                  size="sm"
-                  className="mr-3"
-                >
-                  <div className="flex items-center gap-2">
-                    <svg
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
-                    </svg>
-                    Add All Events to Google Calendar
-                  </div>
-                </Button>
-                <p className="text-xs text-green-600 mt-2">
-                  This opens each event in Google Calendar with details
-                  pre-filled - just click &quot;Save&quot;
-                </p>
-              </div>
-            )}
           </Alert>
 
           <div className="space-y-4">
@@ -345,17 +313,7 @@ John"
                     className="flex-1"
                   >
                     <div className="flex items-center gap-2">
-                      <svg
-                        className="w-4 h-4"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
-                        <path
-                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                          fill="#4285F4"
-                        />
-                      </svg>
+                      <SiGooglecalendar className="w-4 h-4" />
                       Add to Google Calendar
                     </div>
                   </Button>
@@ -368,17 +326,7 @@ John"
                     className="flex-1"
                   >
                     <div className="flex items-center gap-2">
-                      <svg
-                        className="w-4 h-4"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7zm2 2h6v2H9V6zm0 4h6v2H9v-2zm0 4h4v2H9v-2z" />
-                        <path
-                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                          fill="#0078D4"
-                        />
-                      </svg>
+                      <PiMicrosoftOutlookLogo className="w-4 h-4" />
                       Add to Outlook
                     </div>
                   </Button>

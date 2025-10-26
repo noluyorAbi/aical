@@ -146,7 +146,7 @@ export default function Footer() {
                 reserved.
               </p>
               <motion.a
-                href="https://github.com/alperenadatepe/ai-calender-events"
+                href="https://github.com/noluyorAbi/aical"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-slate-400 hover:text-slate-300 transition-colors duration-300"

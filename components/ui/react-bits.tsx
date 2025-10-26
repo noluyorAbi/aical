@@ -14,7 +14,7 @@ interface MagneticButtonProps {
 export const MagneticButton = ({
   children,
   className = "",
-  as: Component = "button",
+  as: Component,
   href,
   ...props
 }: MagneticButtonProps) => {
@@ -31,6 +31,9 @@ export const MagneticButton = ({
     setPosition({ x: 0, y: 0 });
   };
 
+  // Automatically determine the component type
+  const ComponentType = Component || (href ? "a" : "button");
+
   const baseProps = {
     className: `relative overflow-hidden bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-500 hover:shadow-2xl hover:shadow-sky-500/30 hover:scale-105 hover:from-sky-400 hover:to-blue-500 hover:border-sky-400/50 border border-transparent ${className}`,
     onMouseMove: handleMouseMove,
@@ -44,13 +47,13 @@ export const MagneticButton = ({
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <Component {...baseProps}>
+      <ComponentType {...baseProps}>
         <span className="relative z-10">{children}</span>
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 hover:opacity-100 transition-all duration-500 rounded-lg"
           animate={{ x: position.x * -0.5, y: position.y * -0.5 }}
         />
-      </Component>
+      </ComponentType>
     </motion.div>
   );
 };
