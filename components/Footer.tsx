@@ -142,8 +142,7 @@ export default function Footer() {
           >
             <div className="flex flex-col items-center gap-3">
               <p className="text-slate-500 text-xs">
-                © {new Date().getFullYear()} AI Calendar Events. All rights
-                reserved.
+                © {new Date().getFullYear()} AiCal. All rights reserved.
               </p>
               <motion.a
                 href="https://github.com/noluyorAbi/aical"

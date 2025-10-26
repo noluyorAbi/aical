@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 export const alt =
-  "AI Calendar Events - Transform messages into calendar events instantly. AI-powered tool that converts any text into Google Calendar links and ICS files.";
+  "AiCal - AI-powered web app that turns natural language into calendar entries.";
 export const size = {
   width: 1200,
   height: 630,

@@ -9,8 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title:
-    "AI Calendar Events - Transform Messages Into Calendar Events Instantly",
+  title: "AiCal - AI-Powered Calendar Events",
   description:
     "Transform any message into calendar events with AI. Paste emails, texts, or messages and get Google Calendar links, Outlook links, and ICS files instantly. Free AI-powered calendar assistant for professionals.",
   keywords: [
@@ -48,18 +47,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title:
-      "AI Calendar Events - Transform Messages Into Calendar Events Instantly",
+    title: "AiCal - AI-Powered Calendar Events",
     description:
       "Transform any message into calendar events with AI. Paste emails, texts, or messages and get Google Calendar links, Outlook links, and ICS files instantly. Free AI-powered calendar assistant.",
     url: "https://aical.adatepe.dev",
-    siteName: "AI Calendar Events",
+    siteName: "AiCal",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "AI Calendar Events - Free AI tool that transforms messages into Google Calendar and Outlook events instantly",
+        alt: "AiCal - AI-powered web app that turns natural language into calendar entries",
       },
     ],
     locale: "en_US",
@@ -67,8 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "AI Calendar Events - Transform Messages Into Calendar Events Instantly",
+    title: "AiCal - AI-Powered Calendar Events",
     description:
       "Transform any message into calendar events with AI. Paste emails, texts, or messages and get Google Calendar links, Outlook links, and ICS files instantly. Free AI tool.",
     creator: "@alperenadatepe",
