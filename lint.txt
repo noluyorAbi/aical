@@ -1,0 +1,73 @@
+
+> ai-calender-events@0.1.0 lint
+> eslint --fix
+
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/app/api/event/route.ts
+  151:11  warning  'allDescriptions' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/app/calendar/page.tsx
+   91:25  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   93:59  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  112:25  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  113:31  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  134:25  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  135:68  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/app/page.tsx
+  128:54  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/components/ui/AnimatedText.tsx
+  13:3  warning  'delay' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  14:3  warning  'staggerDelay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/components/ui/FadeText.tsx
+  13:3  warning  'startDelay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  14:3  warning  'stagger' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/components/ui/SplitText.tsx
+  13:3  warning  'delay' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  14:3  warning  'wordDelay' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/components/ui/animations.tsx
+  16:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/components/ui/animations.tsx:16:5
+  14 |
+  15 |   useEffect(() => {
+> 16 |     setIsVisible(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  17 |   }, []);
+  18 |
+  19 |   const words = text.split(" ");  react-hooks/set-state-in-effect
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/components/ui/react-bits.tsx
+  123:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/alperen/repos/personalRepos/CAL-EXTRACTOR/ai-calender-events/components/ui/react-bits.tsx:123:5
+  121 |   useEffect(() => {
+  122 |     // Generate dots only on client side to avoid hydration mismatch
+> 123 |     setDots(
+      |     ^^^^^^^ Avoid calling setState() directly within an effect
+  124 |       Array.from({ length: 50 }, (_, i) => ({
+  125 |         id: i,
+  126 |         x: Math.random() * 100,  react-hooks/set-state-in-effect
+
+✖ 16 problems (9 errors, 7 warnings)
+
+
+> ai-calender-events@0.1.0 lint
+> eslint --fix
+
