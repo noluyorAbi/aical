@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     }
 
     const geminiResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GOOGLE_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${GOOGLE_API_KEY}`,
       {
         method: "POST",
         headers: {
@@ -52,7 +52,7 @@ Rules:
 - If no duration, assume 1 hour
 - ALWAYS include a location - if not specified, use context clues
 - Return valid ISO 8601 datetime strings
-- Use current year (2025) if year not specified
+- Use current year (2026) if year not specified
 - Extract venue names, building names, street addresses, cities, countries
 
 Description Guidelines (CRITICAL - ALWAYS BE DETAILED):
